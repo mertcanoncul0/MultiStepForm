@@ -1,3 +1,6 @@
-export function Step3() {
-  return <div>Step3</div>
+import { StepProps } from "../../types"
+import { StepForm } from "../step-form"
+
+export function Step3(props: StepProps) {
+  return <StepForm {...props}>Step3</StepForm>
 }

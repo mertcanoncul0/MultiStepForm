@@ -1,5 +1,5 @@
-import { MultiStepForm } from "./components/multi-step-form"
+import { MultiStepCard } from "./components/multi-step-card"
 
 export function App() {
-  return <MultiStepForm />
+  return <MultiStepCard />
 }
