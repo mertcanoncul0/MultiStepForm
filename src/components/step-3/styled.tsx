@@ -1,1 +1,40 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
+
+export const Step3 = styled.div``
+
+export const Input = styled.input``
+
+export const Item = styled.label<{ $isSelected: boolean }>`
+  display: block;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  height: 81px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+
+  transition: border-color 0.2s ease;
+  ${({ $isSelected }) =>
+    $isSelected &&
+    css`
+      border-color: var(--purplish-blue);
+      background-color: var(--alabester);
+    `}
+  &:hover {
+    border-color: var(--purplish-blue);
+  }
+`
+
+export const InputBody = styled.div`
+  flex-grow: 1;
+  margin-left: 24px;
+`
+
+export const Title = styled.h4``
+
+export const Subtitle = styled.p``
+
+export const Price = styled.p``

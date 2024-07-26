@@ -1,7 +1,10 @@
 import styled from "styled-components"
 
 export const StepForm = styled.form`
-  padding: 56px 100px 0 88px;
+  margin: 56px 100px 32px 100px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
 `
 
 export const StepHeader = styled.header``
@@ -22,13 +25,14 @@ export const Subtitle = styled.h3`
 `
 
 export const Body = styled.div`
-  margin-bottom: 92px;
+  flex-grow: 1;
 `
 
 export const StepFooter = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 32px;
 `
 
 export const GoBackButton = styled.button`

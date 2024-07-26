@@ -1,4 +1,4 @@
-import { BillingType, StepProps } from "../../types"
+import { BillingType, Plan, StepProps } from "../../types"
 import { StepForm } from "../step-form"
 import { Forms } from "../../data/form"
 import { useState } from "preact/hooks"
@@ -8,37 +8,53 @@ import * as S from "./styled"
 
 const { step2 } = Forms
 
-const DEFAULT_PLAN = 1
 const DEFAULT_BILLING_TYPE = "monthly"
+const DEFAULT_PLAN = step2[DEFAULT_BILLING_TYPE][0]
 
-export function Step2(props: StepProps) {
-  const [billingType, setBillingType] =
-    useState<BillingType>(DEFAULT_BILLING_TYPE)
-  const [selectedPlan, setSelectedPlan] = useState<number>(DEFAULT_PLAN)
-  console.log(billingType)
+export function Step2({
+  onStepSubmit,
+  formData,
+  handleBack,
+  ...props
+}: StepProps) {
+  const [billingType, setBillingType] = useState<BillingType>(
+    formData.step2.billingType || DEFAULT_BILLING_TYPE
+  )
+  const [selectedPlan, setSelectedPlan] = useState<Plan>(
+    formData.step2.selectedPlan || DEFAULT_PLAN
+  )
 
-  function handleChangePlan(id: number) {
-    setSelectedPlan(id)
+  function handleChangePlan(item: Plan) {
+    setSelectedPlan(item)
   }
 
   function handleChangeBillingType(billingType: BillingType) {
     setBillingType(billingType)
   }
 
+  function handleSubmit(e: Event) {
+    e.preventDefault()
+
+    onStepSubmit("step2", "step3", {
+      selectedPlan,
+      billingType,
+    })
+  }
+
   return (
-    <StepForm {...props}>
+    <StepForm {...props} onSubmit={handleSubmit} onBack={handleBack}>
       <S.Step2>
         <S.RadioGroup>
-          {step2[billingType].map((item) => (
+          {step2[billingType].map((item: any) => (
             <S.RadioLabel
               key={item.id}
-              $selectedPlan={item.id === selectedPlan}
+              $selectedPlan={selectedPlan.id === item.id}
               $isYearly={billingType === "yearly"}
             >
               <S.RadioInput
                 name="plan-type"
                 type="radio"
-                onChange={() => handleChangePlan(item.id)}
+                onChange={() => handleChangePlan(item)}
               />
               <S.Icon src={Icons[item.id]} />
               <S.Title>{item.title}</S.Title>

@@ -7,17 +7,23 @@ export function StepForm({
   children,
   hasNextStep,
   hasBackStep,
+  onSubmit,
+  onBack,
 }: StepFormProps) {
   return (
-    <S.StepForm>
+    <S.StepForm onSubmit={onSubmit}>
       <S.StepHeader>
         <S.Title>{title}</S.Title>
         <S.Subtitle>{subtitle}</S.Subtitle>
       </S.StepHeader>
       <S.Body>{children}</S.Body>
       <S.StepFooter>
-        {hasBackStep && <S.GoBackButton>Back</S.GoBackButton>}
-        {hasNextStep && <S.GoNextButton>Next</S.GoNextButton>}
+        {hasBackStep && (
+          <S.GoBackButton type="button" onClick={onBack}>
+            Back
+          </S.GoBackButton>
+        )}
+        {hasNextStep && <S.GoNextButton type="submit">Next</S.GoNextButton>}
       </S.StepFooter>
     </S.StepForm>
   )

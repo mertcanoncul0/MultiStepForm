@@ -10,6 +10,7 @@ export const Sidebar = styled.div`
   width: 274px;
   height: 568px;
   border-radius: 10px;
+  margin: 16px 0 0 16px;
 `
 
 export const ItemNumber = styled.span`

@@ -5,6 +5,13 @@ export type StepProps = {
   subtitle: string
   hasNextStep: boolean
   hasBackStep: boolean
+  onStepSubmit(
+    stepId: string,
+    nextStepId: string,
+    formData: Record<any, any>
+  ): void
+  formData?: any
+  handleBack?: () => void
 }
 
 export type StepConfig = {
@@ -17,6 +24,8 @@ export type StepFormProps = {
   children: React.ReactNode
   hasNextStep: boolean
   hasBackStep: boolean
+  onSubmit?: (e: Event) => void
+  onBack?: () => void
 }
 
 export type BillingType = "monthly" | "yearly"
@@ -26,6 +35,7 @@ export type FormField = {
   label: string
   type: string
   placeholder: string
+  name: string
 }
 
 export type Plan = {
