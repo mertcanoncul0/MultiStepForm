@@ -3,7 +3,6 @@ import { Steps } from "../../data/steps"
 import { useStickyState } from "../../hooks/use-sticky-state"
 import { BillingType, Plan } from "../../types"
 import { Sidebar } from "../sidebar"
-import { StepEnd } from "../step-end"
 
 import * as S from "./styled"
 

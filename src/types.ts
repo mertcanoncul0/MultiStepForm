@@ -12,11 +12,15 @@ export type StepProps = {
   ): void
   formData?: any
   handleBack?: () => void
-  changeBillingType: (billingType: BillingType) => void
+  changeBillingType?: (billingType: BillingType) => void
 }
 
 export type StepConfig = {
   component: (props: StepProps) => JSX.Element
+  title?: string
+  subtitle?: string
+  hasNextStep?: boolean
+  hasBackStep?: boolean
 } & StepProps
 
 export type StepFormProps = {

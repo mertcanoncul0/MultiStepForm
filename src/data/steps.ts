@@ -2,7 +2,7 @@ import { Step1 } from "../components/step-1"
 import { Step2 } from "../components/step-2"
 import { Step3 } from "../components/step-3"
 import { Step4 } from "../components/step-4"
-import { Step5, StepEnd } from "../components/step-end"
+import { StepEnd } from "../components/step-end"
 import { StepConfig } from "../types"
 
 export const Steps: { [key: string]: StepConfig } = {
@@ -12,6 +12,7 @@ export const Steps: { [key: string]: StepConfig } = {
     subtitle: "Please provide your name, email address, and phone number.",
     hasNextStep: true,
     hasBackStep: false,
+    onStepSubmit() {},
   },
   step2: {
     component: Step2,
@@ -19,6 +20,7 @@ export const Steps: { [key: string]: StepConfig } = {
     subtitle: "You have the option of monthly or yearly billing.",
     hasNextStep: true,
     hasBackStep: true,
+    onStepSubmit() {},
   },
   step3: {
     component: Step3,
@@ -26,6 +28,7 @@ export const Steps: { [key: string]: StepConfig } = {
     subtitle: "Add-ons help enhance your gaming experience.",
     hasNextStep: true,
     hasBackStep: true,
+    onStepSubmit() {},
   },
   step4: {
     component: Step4,
@@ -33,8 +36,14 @@ export const Steps: { [key: string]: StepConfig } = {
     subtitle: "Double-check everything looks OK before confirming.",
     hasNextStep: true,
     hasBackStep: true,
+    onStepSubmit() {},
   },
   stepend: {
     component: StepEnd,
+    title: "Finishing up",
+    subtitle: "Double-check everything looks OK before confirming.",
+    hasNextStep: true,
+    hasBackStep: true,
+    onStepSubmit() {},
   },
 }
