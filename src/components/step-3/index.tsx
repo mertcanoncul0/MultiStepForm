@@ -32,7 +32,9 @@ export function Step3({
     e.preventDefault()
 
     onStepSubmit("step3", "step4", {
-      selectedAddons,
+      selectedAddons: step3[billingType].filter(
+        (x, i) => x.id === selectedAddons[i]?.id
+      ),
     })
   }
 

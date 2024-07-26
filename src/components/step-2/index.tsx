@@ -36,7 +36,7 @@ export function Step2({
     e.preventDefault()
 
     onStepSubmit("step2", "step3", {
-      selectedPlan,
+      selectedPlan: step2[billingType].find((x) => x.id === selectedPlan.id),
       billingType,
     })
   }
