@@ -9,6 +9,7 @@ export function Step4({
   handleBack,
   formData,
   changeBillingType,
+  onStepSubmit,
   ...props
 }: StepProps) {
   const { selectedAddons } = formData.step3 as { selectedAddons: Plan[] }
@@ -17,8 +18,14 @@ export function Step4({
     selectedPlan: Plan
   }
 
+  function handleSubmit(e: Event) {
+    e.preventDefault()
+
+    onStepSubmit("step4", "stepend", {})
+  }
+
   return (
-    <StepForm {...props} hasNextStep={false} onBack={handleBack}>
+    <StepForm {...props} onBack={handleBack} onSubmit={handleSubmit}>
       <S.Step4>
         <S.MainRow>
           <S.BillingRow>

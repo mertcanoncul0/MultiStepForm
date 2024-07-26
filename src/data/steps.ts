@@ -2,6 +2,7 @@ import { Step1 } from "../components/step-1"
 import { Step2 } from "../components/step-2"
 import { Step3 } from "../components/step-3"
 import { Step4 } from "../components/step-4"
+import { Step5, StepEnd } from "../components/step-end"
 import { StepConfig } from "../types"
 
 export const Steps: { [key: string]: StepConfig } = {
@@ -32,5 +33,8 @@ export const Steps: { [key: string]: StepConfig } = {
     subtitle: "Double-check everything looks OK before confirming.",
     hasNextStep: true,
     hasBackStep: true,
+  },
+  stepend: {
+    component: StepEnd,
   },
 }

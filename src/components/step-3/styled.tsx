@@ -35,8 +35,28 @@ export const InputBody = styled.div`
   margin-left: 24px;
 `
 
-export const Title = styled.h4``
+export const Title = styled.h4`
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--marine-blue);
+  margin-bottom: 8px;
+`
 
-export const Subtitle = styled.p``
+export const Subtitle = styled.p`
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--cool-gray);
+`
 
-export const Price = styled.p``
+export const Price = styled.p`
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--purplish-blue);
+`
+
+export const ErrorMessage = styled.p`
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--strawberry-red);
+`

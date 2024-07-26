@@ -18,11 +18,12 @@ export function Step3({
   const [selectedAddons, setSelectedAddons] = useState<Plan[]>(
     formData.step3.selectedAddons || []
   )
+
   function changeSelectedAddons(checked: boolean, selectedAddon: Plan) {
     if (checked) {
-      setSelectedAddons((prev: Plan[]) => [...prev, selectedAddon])
+      setSelectedAddons((prev) => [...prev, selectedAddon])
     } else {
-      setSelectedAddons((prev: Plan[]) =>
+      setSelectedAddons((prev) =>
         prev.filter((addon) => addon.id !== selectedAddon.id)
       )
     }
@@ -31,19 +32,17 @@ export function Step3({
   function handleSubmit(e: Event) {
     e.preventDefault()
 
+    const matchingAddons = step3[billingType].filter((item: Plan) =>
+      selectedAddons.some((selected) => selected.id === item.id)
+    )
+
     onStepSubmit("step3", "step4", {
-      selectedAddons: step3[billingType].filter(
-        (x, i) => x.id === selectedAddons[i]?.id
-      ),
+      selectedAddons: matchingAddons,
     })
   }
 
   function selectedAddon(id: number) {
-    for (const addon of selectedAddons) {
-      if (addon.id === id) return true
-    }
-
-    return false
+    return selectedAddons.some((addon) => addon.id === id)
   }
 
   return (
@@ -61,7 +60,7 @@ export function Step3({
             />
             <S.InputBody>
               <S.Title>{item.title}</S.Title>
-              <S.Subtitle>{item.title}</S.Subtitle>
+              <S.Subtitle>{item.description}</S.Subtitle>
             </S.InputBody>
             <S.Price>{item.price}</S.Price>
           </S.Item>

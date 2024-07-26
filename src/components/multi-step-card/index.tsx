@@ -3,6 +3,7 @@ import { Steps } from "../../data/steps"
 import { useStickyState } from "../../hooks/use-sticky-state"
 import { BillingType, Plan } from "../../types"
 import { Sidebar } from "../sidebar"
+import { StepEnd } from "../step-end"
 
 import * as S from "./styled"
 
@@ -22,13 +23,14 @@ export function MultiStepCard() {
   function handleStepSubmit(
     stepId: string,
     nextStepId: string,
-    stepData: Record<string, string>
+    stepData: Record<any, any>
   ) {
-    setFormData({ ...formData, [stepId]: stepData })
+    if (!(Object.keys(stepData).length === 0)) {
+      setFormData({ ...formData, [stepId]: stepData })
+    }
+
     setActiveStep(nextStepId)
   }
-
-  console.log(formData)
 
   function onBack() {
     const currentStepNumber = Number(activeStep.slice(-1))

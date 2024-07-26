@@ -26,7 +26,7 @@ export function StepForm({
         {hasNextStep ? (
           <S.GoNextButton type="submit">Next</S.GoNextButton>
         ) : (
-          <S.ConfirmButton type="button">Confirm</S.ConfirmButton>
+          <S.ConfirmButton type="submit">Confirm</S.ConfirmButton>
         )}
       </S.StepFooter>
     </S.StepForm>
