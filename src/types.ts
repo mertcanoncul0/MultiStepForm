@@ -12,6 +12,7 @@ export type StepProps = {
   ): void
   formData?: any
   handleBack?: () => void
+  changeBillingType: (billingType: BillingType) => void
 }
 
 export type StepConfig = {

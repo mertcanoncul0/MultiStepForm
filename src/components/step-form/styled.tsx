@@ -56,8 +56,26 @@ export const GoNextButton = styled.button`
   border-radius: 8px;
   margin-left: auto;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 
   &:hover {
     background-color: hsl(213, 72%, 31%, 100%);
+  }
+`
+
+export const ConfirmButton = styled.button`
+  color: var(--white);
+  background-color: var(--marine-blue);
+  font-size: 16px;
+  font-weight: 500;
+  width: 123px;
+  height: 48px;
+  border-radius: 8px;
+  margin-left: auto;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: hsl(243, 100%, 77%, 100%);
   }
 `

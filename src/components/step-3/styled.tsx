@@ -14,6 +14,7 @@ export const Item = styled.label<{ $isSelected: boolean }>`
   align-items: center;
   justify-content: space-between;
   border: 1px solid #e0e0e0;
+  background-color: var(--white);
   cursor: pointer;
 
   transition: border-color 0.2s ease;
@@ -21,8 +22,9 @@ export const Item = styled.label<{ $isSelected: boolean }>`
     $isSelected &&
     css`
       border-color: var(--purplish-blue);
-      background-color: var(--alabester);
+      background-color: var(--alabaster);
     `}
+
   &:hover {
     border-color: var(--purplish-blue);
   }

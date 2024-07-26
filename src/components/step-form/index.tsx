@@ -23,7 +23,11 @@ export function StepForm({
             Back
           </S.GoBackButton>
         )}
-        {hasNextStep && <S.GoNextButton type="submit">Next</S.GoNextButton>}
+        {hasNextStep ? (
+          <S.GoNextButton type="submit">Next</S.GoNextButton>
+        ) : (
+          <S.ConfirmButton type="button">Confirm</S.ConfirmButton>
+        )}
       </S.StepFooter>
     </S.StepForm>
   )
