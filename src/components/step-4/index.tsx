@@ -35,11 +35,13 @@ export function Step4({
                 {getFirstCharBig(formData.step2.billingType)})
               </S.Title>
               <S.Subtitle
-                onClick={() =>
-                  changeBillingType(
-                    billingType === "monthly" ? "yearly" : "monthly"
-                  )
-                }
+                onClick={() => {
+                  if (changeBillingType) {
+                    changeBillingType(
+                      billingType === "monthly" ? "yearly" : "monthly"
+                    )
+                  }
+                }}
               >
                 Change
               </S.Subtitle>
