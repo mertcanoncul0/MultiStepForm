@@ -14,12 +14,16 @@
   --white: hsl(0, 0%, 100%);
 }
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: "Ubuntu", sans-serif;
   font-size: 1rem;
   background-color: var(--magnolia);
-  height: 100vh;
   line-height: 1.25;
+  height: 100%;
 }
 
 #app {

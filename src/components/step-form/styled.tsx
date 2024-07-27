@@ -27,7 +27,7 @@ export const StepForm = styled.form<{ $isBillingForm?: boolean }>`
   }
 
   @media (width <= 425px) {
-    ${({ $isBillingForm }) => ($isBillingForm ? "top: 46%;" : "top: 36%;")}
+    ${({ $isBillingForm }) => ($isBillingForm ? "top: 46%;" : "top: 44%;")}
 
     width: 343px;
   }
