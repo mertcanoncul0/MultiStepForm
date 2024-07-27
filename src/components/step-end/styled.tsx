@@ -7,7 +7,6 @@ export const Step5 = styled.div`
   text-align: center;
   max-width: 450px;
   margin-inline: auto;
-  box-shadow: 0 25px 40px -20px rgba(0, 0, 0, 9.51%);
 
   @media (max-width: 768px) {
     margin: 56px 100px 32px 100px;

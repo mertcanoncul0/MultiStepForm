@@ -13,7 +13,7 @@ export const MultiStepForm = styled.div`
   }
 
   @media (width <= 768px) {
-    width: 100%;
+    width: 100vw;
     flex-direction: column;
     background-color: transparent;
     box-shadow: none;
