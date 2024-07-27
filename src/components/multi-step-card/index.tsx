@@ -63,6 +63,8 @@ export function MultiStepCard() {
 
   return (
     <S.MultiStepForm>
+      <S.Title>Multi Step Form</S.Title>
+
       <Sidebar activeStep={activeStep} setHandleStep={handleSidebarStepClick} />
       <ActiveStep
         {...stepProps}
