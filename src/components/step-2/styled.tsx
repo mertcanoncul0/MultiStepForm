@@ -44,7 +44,7 @@ export const Title = styled.h3`
   color: var(--marine-blue);
 `
 
-export const Subtitle = styled.h6`
+export const Subtitle = styled.h4`
   color: var(--cool-gray);
   font-size: 14px;
   font-weight: 400;

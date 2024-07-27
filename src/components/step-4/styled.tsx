@@ -2,14 +2,14 @@ import styled from "styled-components"
 
 export const Step4 = styled.div``
 
-export const Title = styled.h4`
+export const Title = styled.h3`
   font-size: 16px;
   font-weight: 500;
   color: var(--marine-blue);
   margin-bottom: 8px;
 `
 
-export const Subtitle = styled.h6`
+export const Subtitle = styled.p`
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -22,7 +22,7 @@ export const Subtitle = styled.h6`
   }
 `
 
-export const Price = styled.h5`
+export const Price = styled.h3`
   font-size: 16px;
   line-height: 20px;
   color: var(--marine-blue);

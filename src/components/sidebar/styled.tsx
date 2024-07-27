@@ -50,7 +50,8 @@ export const ItemBody = styled.div`
   }
 `
 
-export const Subtitle = styled.h5`
+export const Subtitle = styled.span`
+  display: block;
   color: var(--pastel-blue);
   font-size: 12px;
   font-weight: 400;

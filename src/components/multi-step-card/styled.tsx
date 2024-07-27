@@ -6,7 +6,7 @@ export const MultiStepForm = styled.div`
   border-radius: 15px;
   height: 600px;
   width: 940px;
-  box-shadow: 0 25px 40px -20px rgba(0, 0, 0, 0.0951);
+  box-shadow: 0 25px 40px -20px rgba(0, 0, 0, 9.51%);
 
   @media (width <= 1000px) {
     width: 764px;

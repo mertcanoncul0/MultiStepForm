@@ -32,7 +32,7 @@ export const StepForm = forwardRef<HTMLFormElement, StepFormProps>(
               </S.GoBackButton>
             )}
             {hasNextStep ? (
-              <S.GoNextButton onClick={onSubmit}>Next</S.GoNextButton>
+              <S.GoNextButton onClick={onSubmit}>Next Step</S.GoNextButton>
             ) : (
               <S.ConfirmButton onClick={onSubmit}>Confirm</S.ConfirmButton>
             )}
@@ -45,7 +45,7 @@ export const StepForm = forwardRef<HTMLFormElement, StepFormProps>(
             </S.GoBackButton>
           )}
           {hasNextStep ? (
-            <S.GoNextButton onClick={onSubmit}>Next</S.GoNextButton>
+            <S.GoNextButton onClick={onSubmit}>Next Step</S.GoNextButton>
           ) : (
             <S.ConfirmButton onClick={onSubmit}>Confirm</S.ConfirmButton>
           )}
