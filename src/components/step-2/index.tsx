@@ -42,7 +42,12 @@ export function Step2({
   }
 
   return (
-    <StepForm {...props} onSubmit={handleSubmit} onBack={handleBack}>
+    <StepForm
+      {...props}
+      onSubmit={handleSubmit}
+      onBack={handleBack}
+      isBillingForm
+    >
       <S.Step2>
         <S.RadioGroup>
           {step2[billingType].map((item: any) => (
@@ -57,11 +62,13 @@ export function Step2({
                 onChange={() => handleChangePlan(item)}
               />
               <S.Icon src={Icons[item.id]} />
-              <S.Title>{item.title}</S.Title>
-              <S.Subtitle>{item.price}</S.Subtitle>
-              {billingType === "yearly" && (
-                <S.Description>{item.description}</S.Description>
-              )}
+              <S.TitleWrapper>
+                <S.Title>{item.title}</S.Title>
+                <S.Subtitle>{item.price}</S.Subtitle>
+                {billingType === "yearly" && (
+                  <S.Description>{item.description}</S.Description>
+                )}
+              </S.TitleWrapper>
             </S.RadioLabel>
           ))}
         </S.RadioGroup>

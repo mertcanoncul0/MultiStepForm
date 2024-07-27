@@ -7,6 +7,10 @@ export const RadioGroup = styled.div`
   align-items: center;
   gap: 18px;
   margin-bottom: 32px;
+
+  @media (width <= 500px) {
+    flex-direction: column;
+  }
 `
 
 export const RadioInput = styled.input`
@@ -25,7 +29,13 @@ export const Icon = styled.img`
   margin-bottom: 40px;
   width: 40px;
   height: 40px;
+
+  @media (width <= 500px) {
+    margin-bottom: 0;
+  }
 `
+
+export const TitleWrapper = styled.div``
 
 export const Title = styled.h3`
   font-size: 16px;
@@ -119,13 +129,21 @@ export const RadioLabel = styled.label<{
 }>`
   display: block;
   width: 138px;
-  height: ${({ $isYearly }) => ($isYearly ? "183px" : "160px")};
+  height: ${({ $isYearly }) => ($isYearly ? "190px" : "160px")};
   padding: 20px 16px;
   background-color: white;
   border: 1px solid var(--light-gray);
   border-radius: 8px;
   transition: border-color 0.2s ease, height 0.2s ease;
   cursor: pointer;
+
+  @media (width <= 500px) {
+    padding: 14px 16px;
+    width: 100%;
+    height: ${({ $isYearly }) => ($isYearly ? "99px" : "77px")};
+    display: flex;
+    gap: 14px;
+  }
 
   &:hover {
     border-color: var(--purplish-blue);

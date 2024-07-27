@@ -17,6 +17,10 @@ export const Item = styled.label<{ $isSelected: boolean }>`
   background-color: var(--white);
   cursor: pointer;
 
+  @media (width <= 500px) {
+    padding: 12px 16px;
+  }
+
   transition: border-color 0.2s ease;
   ${({ $isSelected }) =>
     $isSelected &&
@@ -35,17 +39,38 @@ export const InputBody = styled.div`
   margin-left: 24px;
 `
 
+export const TitleWrapper = styled.h4`
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--marine-blue);
+  margin-bottom: 8px;
+
+  @media (width <= 500px) {
+    font-size: 14px;
+    margin-bottom: 3px;
+  }
+`
+
 export const Title = styled.h4`
   font-size: 16px;
   font-weight: 500;
   color: var(--marine-blue);
   margin-bottom: 8px;
+
+  @media (width <= 500px) {
+    font-size: 14px;
+    margin-bottom: 3px;
+  }
 `
 
 export const Subtitle = styled.p`
   font-size: 15px;
   line-height: 20px;
   color: var(--cool-gray);
+
+  @media (width <= 500px) {
+    font-size: 12px;
+  }
 `
 
 export const Price = styled.p`

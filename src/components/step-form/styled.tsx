@@ -1,10 +1,36 @@
 import styled from "styled-components"
 
-export const StepForm = styled.form`
+export const StepForm = styled.form<{ $isBillingForm?: boolean }>`
   margin: 56px 100px 32px 100px;
   width: 450px;
   display: flex;
   flex-direction: column;
+
+  @media (width <= 1000px) {
+    width: 400px;
+  }
+
+  @media (width <= 768px) {
+    background-color: var(--white);
+    margin: 0 auto;
+    padding: 32px 24px;
+    border-radius: 10px;
+    position: absolute;
+    top: 41.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+  }
+
+  @media (width <= 500px) {
+    ${({ $isBillingForm }) => ($isBillingForm ? "top: 46%;" : "top: 38%;")}
+  }
+
+  @media (width <= 425px) {
+    ${({ $isBillingForm }) => ($isBillingForm ? "top: 46%;" : "top: 36%;")}
+
+    width: 343px;
+  }
 `
 
 export const StepHeader = styled.header``
@@ -33,6 +59,30 @@ export const StepFooter = styled.footer`
   justify-content: space-between;
   align-items: center;
   margin-top: 32px;
+
+  @media (width <= 768px) {
+    display: none;
+  }
+`
+
+export const StepFooterMobile = styled.footer`
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+
+  @media (width <= 768px) {
+    background-color: var(--white);
+    margin: 0 auto;
+    padding: 32px 24px;
+    border-radius: 10px;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 72px;
+  }
 `
 
 export const GoBackButton = styled.button`

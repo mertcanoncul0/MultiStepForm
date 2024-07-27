@@ -7,10 +7,24 @@ export const Sidebar = styled.div`
   padding: 40px 32px;
   color: var(--white);
   background-image: url("/images/bg-sidebar-desktop.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 274px;
   height: 568px;
   border-radius: 10px;
   margin: 16px 0 0 16px;
+
+  @media (width <= 768px) {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    margin: 0;
+    border-radius: 0;
+    gap: 16px;
+    max-height: 175px;
+    background-image: url("/images/bg-sidebar-mobile.svg");
+  }
 `
 
 export const ItemNumber = styled.span`
@@ -30,7 +44,11 @@ export const ItemNumber = styled.span`
   justify-content: center;
 `
 
-export const ItemBody = styled.div``
+export const ItemBody = styled.div`
+  @media (width <= 768px) {
+    display: none;
+  }
+`
 
 export const Subtitle = styled.h5`
   color: var(--pastel-blue);
@@ -50,6 +68,7 @@ export const Item = styled.div<{ $active?: boolean }>`
   display: flex;
   align-items: center;
   gap: 16px;
+  cursor: pointer;
 
   ${ItemNumber} {
     ${({ $active }) =>

@@ -1,4 +1,4 @@
-import { JSX } from "preact"
+import { JSX, Ref } from "preact"
 
 export type StepProps = {
   title: string
@@ -15,14 +15,6 @@ export type StepProps = {
   changeBillingType?: (billingType: BillingType) => void
 }
 
-export type StepConfig = {
-  component: (props: StepProps) => JSX.Element
-  title?: string
-  subtitle?: string
-  hasNextStep?: boolean
-  hasBackStep?: boolean
-} & StepProps
-
 export type StepFormProps = {
   title: string
   subtitle: string
@@ -31,7 +23,17 @@ export type StepFormProps = {
   hasBackStep: boolean
   onSubmit?: (e: Event) => void
   onBack?: () => void
+  isBillingForm?: boolean
+  ref?: Ref<HTMLFormElement>
 }
+
+export type StepConfig = {
+  component: (props: StepProps) => JSX.Element
+  title?: string
+  subtitle?: string
+  hasNextStep?: boolean
+  hasBackStep?: boolean
+} & StepProps
 
 export type BillingType = "monthly" | "yearly"
 

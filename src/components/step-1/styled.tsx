@@ -14,6 +14,11 @@ export const Input = styled.input`
   color: var(--marine-blue);
   transition: border-color 0.2s ease-in-out;
 
+  @media (width <= 500px) {
+    padding: 12px 16px;
+    height: 40px;
+  }
+
   &:focus {
     outline-color: var(--purplish-blue);
   }
@@ -33,6 +38,11 @@ export const Label = styled.label`
   font-weight: 400;
   color: var(--marine-blue);
   margin-bottom: 8px;
+
+  @media (width <= 500px) {
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
 `
 
 export const ErrorMessage = styled.p`
@@ -47,6 +57,10 @@ export const ErrorMessage = styled.p`
 export const FormItem = styled.div<{ $error: boolean }>`
   position: relative;
   margin-bottom: 24px;
+
+  @media (width <= 500px) {
+    margin-bottom: 16px;
+  }
 
   ${Input} {
     ${({ $error }) =>

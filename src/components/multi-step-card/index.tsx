@@ -31,6 +31,12 @@ export function MultiStepCard() {
     setActiveStep(nextStepId)
   }
 
+  function handleSidebarStepClick(stepId: string) {
+    if (activeStep === "stepend") {
+      setActiveStep(stepId)
+    }
+  }
+
   function onBack() {
     const currentStepNumber = Number(activeStep.slice(-1))
 
@@ -57,7 +63,7 @@ export function MultiStepCard() {
 
   return (
     <S.MultiStepForm>
-      <Sidebar activeStep={activeStep} />
+      <Sidebar activeStep={activeStep} setHandleStep={handleSidebarStepClick} />
       <ActiveStep
         {...stepProps}
         onStepSubmit={handleStepSubmit}
